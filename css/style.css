@@ -3,7 +3,7 @@
 *:after{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-size:18px;
 }
 
@@ -14,15 +14,17 @@ body {
     /* padding: 20px 300px; */
 }
 
+header {
+  position: relative;
+}
 .container{
-  /* min-width: 700px; */
-  width: 60vw;
+  width: 80vw;
   height: 90%;
+  /* overflow: auto; */
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start; 
-   /* flex: 1 0; */
   margin: auto;
 }
 
@@ -31,24 +33,79 @@ body {
   transition: all 0.45s !important;
   width: 100%;
   height: 80px;
-  margin: 10px 0px 10px 0px;
+  /* margin: 10px 0px 10px 0px; */
   padding:0; 
   display: flex;
   align-items: center; 
 }
 
 .logo{
+  position: absolute;
+  top:20%;
+  left: 20vh;
   display: inline-block;
-  margin: 5px;
-  margin-left: 30px;
   width: 170px;
+  margin: 5px;
 }
 
 .invert { filter: invert(100%); }
 
 video {
   width:100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.playButton{
+  background-image: ;
+}
+
+.wrapper{
+  position: relative;
+}
+
+#playButton {
+  width:100px;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+/* .playButton{
+  border-radius: 90px;
+  border: 12px solid #fff;
+  height: 100px;
+  position: absolute;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  width: 100px;
+  margin: auto;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+  cursor: pointer;
+}
+
+.playButton:before{
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 0 25px 50px;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  top:0;
+  left:0;
+  right:-10px;
+  bottom:0;
+  margin: auto;
+} */
 
 .contents {
   margin-top: 2px;
@@ -85,7 +142,7 @@ video {
     font-weight: 600;
 } 
 
-.btn::after {
+/* .btn::after {
   content: "";
   display: inline-block;
   height:100%;
@@ -96,14 +153,14 @@ video {
   left:0;
   z-index:1;
   transition: all .4s;
-}
+} */
 
 .btn:hover {
   transform: translateX(-3px);
 }
 
 .btn:active {
-  transform: translateY(2px);
+  transform: translateX(2px);
 }
 
 .separator {
