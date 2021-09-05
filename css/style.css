@@ -42,7 +42,7 @@ header {
 .logo{
   position: absolute;
   top:20%;
-  left: 20vh;
+  left: 10vw;
   display: inline-block;
   width: 170px;
   margin: 5px;
@@ -113,7 +113,7 @@ video {
 
 .content {
   overflow: hidden;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .name {
@@ -180,4 +180,9 @@ video {
   width:100%;
   margin-top:auto; 
   margin-bottom: 20px;
+}
+
+.response {
+  font-size: 1.5rem;
+  font-weight: 900;
 }
