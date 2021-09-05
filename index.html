@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="navigation">
+            <a href="https://seen.io">
+                <img class="logo invert" src="img/logo.png" alt="Seen Logo Here">
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper">
+            <video class="video" id="video" controls poster="./img/main.png">
+                <source src=".\mp4\production ID_4092801.mp4" type="video/mp4" />
+            </video>
+            <img class="playButton" id="playButton" src="img/btn.png" onclick="playPause()"></button>
+        </div>
+
+        <div class="contents">
+            <div class="content">
+                <span class="name">Hey Vigan</span>
+            </div>
+
+            <div class="content">
+                You’ve received this video because we’re currently in development of a new product that we think might
+                be useful for you. Watch the video above and if you’re interested in updates, subscribe to our
+                newsletter below..
+            </div>
+
+            <div class="content">
+                <form class="content" id="referral-form" onsubmit="return hideForm(event)">
+                    <input type="email" placeholder="Email" id="email" name="email" required>
+                    <input type="submit" class="btn" value="Subscribe">
+                </form>
+            </div>
+
+            <div class="content" id="form-message" style="display: none;">
+                Thank you for your response!
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="separator"></div>
+            POWERED BY SEEN - <span id="year"></span>
+        </div>
+    </div>
+
+    <script>
+        function hideForm(e) {
+            e.preventDefault();
+            document.getElementById("referral-form").style.display = 'none';
+            document.getElementById("form-message").style.display = 'block';
+            try {} catch (e) {
+                throw new Error(e.message);
+            }
+            return false;
+        }
+
+        let year = document.getElementById("year").innerHTML += new Date().getFullYear();
+
+        var video = document.getElementById("video");
+
+        function playPause() {
+            if (video.paused) {
+                video.play();
+                document.getElementById("playButton").style.display = 'none';
+            } else {
+                video.pause();
+                document.getElementById("playButton").style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
