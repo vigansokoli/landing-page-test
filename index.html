@@ -27,7 +27,7 @@
             <video class="video" id="video" controls poster="./img/main.png">
                 <source src=".\mp4\production ID_4092801.mp4" type="video/mp4" />
             </video>
-            <img class="playButton" id="playButton" src="img/btn.png" onclick="playPause()"></button>
+            <img class="playButton" id="playButton" onclick="playPause()" src="img/btn.png" />
         </div>
 
         <div class="contents">
@@ -71,16 +71,23 @@
         }
 
         let year = document.getElementById("year").innerHTML += new Date().getFullYear();
+        const video = document.getElementById("video");
 
-        var video = document.getElementById("video");
+        video.addEventListener('play', (event) => {
+            document.getElementById("playButton").style.display = 'none';
+        });
 
+        video.addEventListener('pause', (event) => {
+            document.getElementById("playButton").style.display = 'block';
+        });            
+        
         function playPause() {
+            var video = document.getElementById("video");
+
             if (video.paused) {
                 video.play();
-                document.getElementById("playButton").style.display = 'none';
             } else {
                 video.pause();
-                document.getElementById("playButton").style.display = 'block';
             }
         }
     </script>
